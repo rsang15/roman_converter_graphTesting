@@ -22,6 +22,7 @@ public class RomanConverterTest {
 		
 		try{
 			rcone.toRoman(293982);
+			rcone.toRoman(-3);
 		} catch( final IllegalArgumentException e ){
 		    final String msg = "number out of range (must be 1..3999)";
 		    assertEquals(msg, e.getMessage());
