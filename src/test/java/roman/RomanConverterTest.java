@@ -14,8 +14,12 @@ public class RomanConverterTest {
 		assertEquals(5, rcone.fromRoman("V"));
 		assertEquals("MMMCMXCIX", rcone.toRoman(3999));
 		assertEquals("I", rcone.toRoman(1));
+		assertEquals("I", rcone.toRoman(1));
+		assertEquals(3999, rcone.fromRoman("MMMCMXCIX"));
+		assertEquals(1, rcone.fromRoman("I"));
+		assertTrue(0 == rcone.fromRoman(""));
+	
 		
-		assertEquals(3000, rcone.fromRoman("MMM"));
 		String s = "ASDJJDLLD";
 		try{
 			rcone.fromRoman(s);
@@ -26,6 +30,7 @@ public class RomanConverterTest {
 		
 		try{
 			rcone.fromRoman("m");
+			rcone.fromRoman("MMMM");
 		} catch(final IllegalArgumentException e){
 			final String msg2 = "Invalid Roman numeral: m";
 			assertEquals(msg2, e.getMessage());
@@ -40,6 +45,7 @@ public class RomanConverterTest {
 		    final String msg = "number out of range (must be 1..3999)";
 		    assertEquals(msg, e.getMessage());
 		 }
+		
 	}
 
 }
